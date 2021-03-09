@@ -5,13 +5,13 @@ def scan(ip):
     # scapy.arping(ip)
     arp_request = scapy.ARP(pdst=ip)
     # Set broadcast mac
-    broadcast = scapy.Ether(sdt='ff:ff:ff:ff:ff:ff')
+    broadcast = scapy.Ether(dst='ff:ff:ff:ff:ff:ff')
     broadcast.show()
     # scapy.ls(scapy.Ether())
     # arp_request.pdst = ip
     print(arp_request.summary())
     print(broadcast.summary())
-    scapy.ls(scapy.ARP())
+    # scapy.ls(scapy.ARP())
     arp_request_broadcast = broadcast/arp_request
     arp_request_broadcast.show()
 
